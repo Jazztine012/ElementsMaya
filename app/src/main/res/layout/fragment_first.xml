@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".FirstFragment"
+    android:background="@color/transparent">
+
+<!--    MAIN FRAGMENT PAGE-->
+    <RelativeLayout
+        android:id="@+id/layout_mainFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/view_blank"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:background="@color/transparent"/>
+
+        <!--    TEXT INPUT CARD LAYOUT-->
+        <androidx.cardview.widget.CardView
+            android:layout_below="@id/view_blank"
+            android:id="@+id/card_textPasswordLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:backgroundTint="@color/gray_light"
+
+            app:cardCornerRadius="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginHorizontal="20dp">
+                <EditText
+                    android:id="@+id/editText_passwordInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/gray"
+                    android:inputType="textPassword"
+
+                    android:drawableEnd="@drawable/baseline_visibility_24"
+                    android:drawableTint="@color/gray"
+
+                    android:layout_weight="0.5"
+
+                    android:fontFamily="@font/verdana"
+                    android:hint="Enter Password"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/gray"
+                    android:typeface="normal" />
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+<!--        GET REWARDS TEXT-->
+        <RelativeLayout
+            android:layout_below="@id/card_textPasswordLayout1"
+            android:id="@+id/layout_getRewards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_getRewards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginStart="10dp"
+                android:text="GET REWARDS"
+                android:textAlignment="textStart"
+                android:textColor="@color/gray" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+
+                android:layout_centerVertical="true"
+                android:layout_marginStart="5dp"
+                android:layout_toRightOf="@id/text_getRewards"
+                android:src="@drawable/baseline_star_24"
+                app:tint="@color/gray" />
+
+        </RelativeLayout>
+
+<!--        CARDS VOUCHERS AND MISSIONS LAYOUT-->
+        <RelativeLayout
+            android:id="@+id/layout_cardButtons"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_getRewards"
+            android:layout_centerHorizontal="true">
+
+            <!--    VOUCHERS CARDVIEW-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_vouchers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+
+                android:backgroundTint="@color/green_basic"
+
+                android:gravity="center"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="15dp"
+                android:elevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="190dp"
+                    android:layout_height="190dp">
+
+                    <TextView
+                        android:id="@+id/text_cardTitle1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/verdana_bold"
+                        android:text="Vouchers"
+                        android:textColor="@color/white"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/text_cardTitle1"
+                        android:fontFamily="@font/verdana"
+                        android:paddingHorizontal="25dp"
+                        android:paddingVertical="10dp"
+                        android:text="Earn extra rewards for your future purchases!"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/green_lightest"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="65dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginVertical="5dp"
+                        android:alpha="0.5"
+                        android:src="@drawable/baseline_monetization_on_24"
+                        app:tint="@color/white" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--    MISSIONS CARDVIEW-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_missions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/card_vouchers"
+                android:backgroundTint="@color/gray_light"
+                android:layout_marginHorizontal="5dp"
+
+                android:elevation="15dp"
+
+                android:gravity="center"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="15dp">
+
+                <RelativeLayout
+                    android:layout_width="190dp"
+                    android:layout_height="190dp">
+
+                    <TextView
+                        android:id="@+id/text_cardTitle2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/verdana_bold"
+                        android:text="Missions"
+                        android:textColor="@color/black"
+                        android:textSize="25sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/text_cardTitle2"
+                        android:fontFamily="@font/verdana"
+                        android:paddingHorizontal="25dp"
+                        android:paddingVertical="10dp"
+                        android:text="Check out today's missions and earn even more rewards!"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="75dp"
+                        android:layout_height="65dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginVertical="5dp"
+                        android:alpha="0.5"
+                        android:src="@drawable/baseline_task_alt_24"
+                        app:tint="@color/black" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--MAIN ACTIVITY FILE-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+
+<!--    VIEW FOR FRAGMENTS / NAVIGATION FROM FRAGMENT TO FRAGMENT-->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation_graph"
+        android:layout_below="@id/horizontalScrollView_categories" />
+
+<!--    LAYOUT WITH USERNAME AND MESSAGE BUTTON-->
+    <RelativeLayout
+        android:id="@+id/layout_accountHolder"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        android:paddingTop="0dp">
+
+<!--        ACCOUNT NAME-->
+        <TextView
+            android:id="@+id/text_accountName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:text="STRING"
+            android:textSize="20sp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/black"/>
+
+<!--        MESSAGE ICON (AS A BUTTON)-->
+        <ImageView
+            android:id="@+id/imageView_message"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_message_24"/>
+    </RelativeLayout>
+
+<!--    CATEGORY LAYOUTS-->
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView_categories"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_accountHolder"
+        android:scrollbars="none">
+
+<!--        SCROLLVIEWS CAN ONLY HAVE ONE CHILD-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingVertical="5dp">
+
+            <Button
+                android:id="@+id/button_wallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:backgroundTint="@color/white"
+                android:text="WALLET"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/button_savings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/white"
+                android:text="SAVINGS"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@id/button_wallet"/>
+
+            <Button
+                android:id="@+id/button_credit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/white"
+                android:text="CREDIT"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@id/button_savings"/>
+
+            <Button
+                android:id="@+id/button_loans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/white"
+                android:text="LOANS"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@id/button_credit"/>
+
+            <Button
+                android:id="@+id/button_cards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:backgroundTint="@color/white"
+                android:text="CARDS"
+                android:textColor="@color/black"
+                android:layout_toRightOf="@id/button_loans"/>
+
+        </RelativeLayout>
+    </HorizontalScrollView>
+
+<!--    NAVIGATIONAL BUTTONS INSIDE A CARD: LIKE IN PAYMAYA-->
+<!--    CARDS CAN HAVE SHADOWS UNDERNEATH TO ADD DEPTH TO THE APP-->
+<!--    FIRST GROUP OF ATTRIBUTES ARE COMMON ATTRIBUTES FOR ALL VIEWS-->
+<!--    SECOND GROUP OF ATTRIBUTES ARE SPECIFIED MOSTLY FOR THEIR GROUPS ONLY-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_navigationButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        app:elevation="50dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/black"
+        app:cardCornerRadius="12dp">
+
+<!--        GRID LAYOUT WAS USED TO SORT BUTTONS BETTER AND HAVE MORE CONTROL WITH THEIR SPACING-->
+<!--        FOR MARGINS: THE GRIDLAYOUT AND THE MIDDLE IMAGEBUTTON HAVE MARGINS ON BOTH SIDES-->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="15dp"
+            android:columnCount="3"
+            android:rowCount="1">
+
+            <ImageButton
+                android:id="@+id/imageButton_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="0"
+                android:layout_gravity="center"
+                android:background="@color/transparent"
+
+                android:src="@drawable/baseline_account_balance_wallet_24"
+                app:tint="@color/white" />
+
+            <ImageButton
+                android:id="@+id/imageButton_two"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:background="@color/transparent"
+                android:paddingHorizontal="65dp"
+
+                android:src="@drawable/baseline_add_card_24"
+                app:tint="@color/white" />
+
+            <ImageButton
+                android:id="@+id/imageButton_three"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_gravity="center"
+                android:background="@color/transparent"
+
+                android:src="@drawable/baseline_attach_money_24"
+                app:tint="@color/white" />
+
+        </GridLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    PROJECT DEFAULTS IN ANDROID STUDIO FLAMINGO (I THINK)-->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+<!--    USER-ADDED-->
+    <color name="transparent">#00FFFFFF</color>
+    <color name="white_semi_transparent">#75FFFFFF</color>
+    <color name="gray">#858585</color>
+    <color name="gray_light">#EBEBEB</color>
+
+<!--    PAYMAYA-LIKE COLOR SCHEME-->
+    <color name="green_basic">#53A16A</color>
+    <color name="green_alternative">#25AA4B</color>
+    <color name="green_light">#8EFFAF</color>
+    <color name="green_lightest">#D5FFE0</color>
+    <color name="green_dark">#1D5543</color>
+
+<!--    GCASH-LIKE COLOR SCHEME-->
+    <color name="blue_basic">#5C8DA3</color>
+    <color name="blue_desaturated">#8DA4AE</color>
+    <color name="blue_alternative">#2584AA</color>
+    <color name="blue_light">#B9E1FF</color>
+    <color name="blue_dark">#1D3255</color>
+
+<!--    WHITE BACKGROUND COLOR SCHEME-->
+
+<!--    OTHER GENERAL COLORS AND PALETTES-->
+</resources>
