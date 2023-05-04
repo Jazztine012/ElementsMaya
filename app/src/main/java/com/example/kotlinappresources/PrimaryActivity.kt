@@ -6,23 +6,20 @@ import android.view.View
 import android.view.View.OnClickListener
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.example.kotlinappresources.databinding.ActivityMainBinding
+import com.example.kotlinappresources.databinding.ActivityPrimaryBinding
 
-class MainActivity : AppCompatActivity(), OnClickListener {
+class PrimaryActivity : AppCompatActivity(), OnClickListener {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityPrimaryBinding
     private var button: Int = 0
 
-    //region setting colors
-//    val basicGreen = ColorDrawable(ContextCompat.getColor(this, R.color.green_basic))
-    //endregion
-
-    @SuppressLint("ResourceAsColor")
+    @SuppressLint("ResourceAsColor", "SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityPrimaryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //region SETS COLORS ON START
         binding.buttonWallet.setBackgroundColor(ContextCompat.getColor(this, R.color.gray_light))
         binding.buttonCards.setBackgroundColor(ContextCompat.getColor(this, R.color.gray_light))
         binding.buttonCredit.setBackgroundColor(ContextCompat.getColor(this, R.color.gray_light))
@@ -34,6 +31,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         binding.buttonCredit.setTextColor(ContextCompat.getColor(this, R.color.gray))
         binding.buttonLoans.setTextColor(ContextCompat.getColor(this, R.color.gray))
         binding.buttonSavings.setTextColor(ContextCompat.getColor(this, R.color.gray))
+        //endregion
 
         binding.textAccountName.text = "@ACCOUNT"
 
@@ -60,19 +58,16 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             R.id.imageButton_one -> {
                 button = 1
                 setSelectedNavigation(button)
-                println("ONE")
             }
 
             R.id.imageButton_two -> {
                 button = 2
                 setSelectedNavigation(button)
-                println("TWO")
             }
 
             R.id.imageButton_three -> {
                 button = 3
                 setSelectedNavigation(button)
-                println("THREE")
             }
             /*
             BUTTON ORDER
@@ -105,6 +100,7 @@ class MainActivity : AppCompatActivity(), OnClickListener {
         }
     }
 
+    //region COLOR CHANGER
     @SuppressLint("ResourceAsColor")
     private fun setSelectedNavigation(button: Int){
         when(button){
@@ -198,4 +194,5 @@ class MainActivity : AppCompatActivity(), OnClickListener {
             }
         }
     }
+    //endregion
 }

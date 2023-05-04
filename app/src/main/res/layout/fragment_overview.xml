@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".OverviewFragment"
+    android:background="@color/transparent"
+
+    android:id="@+id/fragment_overview">
+
+<!--    MAIN FRAGMENT PAGE-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:id="@+id/layout_mainFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--        BLANK VIEW FOR PADDING-->
+            <View
+                android:id="@+id/view_blank"
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/transparent"/>
+
+            <!--        MATERIAL CARDVIEW FOR ACCOUNT OVERVIEW-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_account_overview"
+                android:layout_below="@id/view_blank"
+
+                app:strokeColor="@color/black_semi_transparent"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/transparent"
+                android:layout_marginHorizontal="15dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:paddingVertical="20dp"
+                    android:paddingHorizontal="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:paddingBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_centerVertical="true"
+                            android:id="@+id/image_wallet"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/baseline_account_balance_wallet_24" />
+                        <TextView
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/image_wallet"
+                            android:layout_marginStart="15dp"
+
+                            android:id="@+id/text_totalAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:textSize="20sp"
+                            android:typeface="normal"
+                            android:fontFamily="@font/verdana_bold"
+                            android:text="AMOUNT STRING"/>
+                        <ImageView
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:id="@+id/image_amountVisibility"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/baseline_visibility_24" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:paddingBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/text_walletBalance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:textSize="13sp"
+                            android:textColor="@color/gray"
+                            android:typeface="normal"
+                            android:fontFamily="@font/verdana"
+                            android:text="Wallet Balance"/>
+
+                        <TextView
+                            android:layout_toRightOf="@id/text_walletBalance"
+                            android:layout_marginStart="10dp"
+
+                            android:textSize="13sp"
+                            android:id="@+id/text_options"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:textColor="@color/green_basic"
+                            android:typeface="normal"
+                            android:fontFamily="@font/verdana"
+                            android:text="Options"/>
+
+                    </RelativeLayout>
+
+                    <!--            CONTAINS BUTTONS AND BUTTON NAMES-->
+                    <!--            BUTTON NAMES ARE NOT CLICKABLE-->
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:rowCount="4"
+                        android:columnCount="4">
+
+                        <ImageButton
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:id="@+id/button_cashIn"
+                            android:backgroundTint="@color/gray_light"
+
+                            android:layout_row="0"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+                            android:src="@drawable/baseline_account_balance_wallet_24" />
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+
+                            android:layout_row="1"
+                            android:layout_column="0"
+                            android:layout_columnWeight="1"
+
+                            android:textAlignment="center"
+                            android:textColor="@color/gray"
+                            android:textSize="13sp"
+                            android:text="Cash In"/>
+
+                        <ImageButton
+                            android:id="@+id/button_sendMoney"
+                            android:backgroundTint="@color/gray_light"
+
+                            android:layout_row="0"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+                            android:src="@drawable/baseline_account_balance_wallet_24"
+
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"/>
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+
+                            android:layout_row="1"
+                            android:layout_column="1"
+                            android:layout_columnWeight="1"
+
+                            android:textAlignment="center"
+                            android:textColor="@color/gray"
+                            android:textSize="13sp"
+                            android:text="Send Money"/>
+
+                        <ImageButton
+                            android:id="@+id/button_buyLoad"
+                            android:backgroundTint="@color/gray_light"
+
+                            android:layout_row="0"
+                            android:layout_column="2"
+                            android:layout_columnWeight="1"
+                            android:src="@drawable/baseline_account_balance_wallet_24"
+
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"/>
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+
+                            android:layout_row="1"
+                            android:layout_column="2"
+                            android:layout_columnWeight="1"
+
+                            android:textAlignment="center"
+                            android:textColor="@color/gray"
+                            android:textSize="13sp"
+                            android:text="Buy Load"/>
+
+                        <ImageButton
+                            android:id="@+id/button_bills"
+                            android:backgroundTint="@color/gray_light"
+
+                            android:layout_row="0"
+                            android:layout_column="3"
+                            android:layout_columnWeight="1"
+                            android:src="@drawable/baseline_account_balance_wallet_24"
+
+
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"/>
+
+                        <TextView
+                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+
+                            android:layout_row="1"
+                            android:layout_column="3"
+                            android:layout_columnWeight="1"
+
+                            android:textAlignment="center"
+                            android:textColor="@color/gray"
+                            android:textSize="13sp"
+                            android:text="Bills"/>
+
+                    </GridLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!--        TRANSACTIONS PAGE USING MATERIAL CARD VIEW-->
+            <!--        MATERIAL CARD VIEWS HAVE STROKE COLORS AND WIDTH SPECIFICATIONS-->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_recent_transactions"
+
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/card_account_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/transparent"
+                android:layout_marginHorizontal="15dp"
+
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black_semi_transparent">
+
+                <LinearLayout
+                    android:paddingVertical="20dp"
+                    android:paddingHorizontal="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--                TRANSACTIONS TITLE AND "SEE ALL" BUTTON-->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_alignParentLeft="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="TRANSACTIONS"
+                            android:textSize="15sp"
+                            android:textColor="@color/black"
+                            android:alpha="0.8"
+                            android:fontFamily="@font/verdana_bold"
+                            android:layout_weight="0.5"/>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="See All"
+                            android:layout_marginHorizontal="10dp"
+                            android:textSize="12sp"
+                            android:textColor="@color/green_dark"
+                            android:alpha="0.8"
+                            android:fontFamily="@font/verdana_bold"
+                            android:layout_weight="1"/>
+                    </RelativeLayout>
+
+                    <!--                TRANSACTION ITEMS-->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        tools:listitem="@layout/recycler_fragment_transaction_item"
+                        tools:itemCount="5"/>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <RelativeLayout
+                android:layout_below="@id/card_recent_transactions"
+                android:id="@+id/layout_getRewards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:fontFamily="@font/verdana_bold"
+                    android:typeface="normal"
+
+                    android:id="@+id/text_getRewards"
+                    android:layout_width="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="15dp"
+                    android:text="Get Rewards"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/gray" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="3dp"
+                    android:layout_toRightOf="@id/text_getRewards"
+                    android:src="@drawable/baseline_star_24"
+                    app:tint="@color/gray" />
+
+            </RelativeLayout>
+
+            <!--        CARDS VOUCHERS AND MISSIONS LAYOUT-->
+            <RelativeLayout
+                android:id="@+id/layout_cardButtons"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_getRewards"
+                android:layout_centerHorizontal="true">
+
+                <!--    VOUCHERS CARDVIEW-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_vouchers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+
+                    android:backgroundTint="@color/green_basic"
+
+                    android:gravity="center"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="15dp"
+                    android:elevation="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="190dp"
+                        android:layout_height="190dp">
+
+                        <TextView
+                            android:id="@+id/text_cardTitle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/verdana_bold"
+                            android:text="Vouchers"
+                            android:textColor="@color/white"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/text_cardTitle1"
+                            android:fontFamily="@font/verdana"
+                            android:paddingHorizontal="25dp"
+                            android:paddingVertical="10dp"
+                            android:text="Earn extra rewards for your future purchases!"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/green_lightest"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:layout_width="75dp"
+                            android:layout_height="70sp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginHorizontal="5dp"
+                            android:layout_marginVertical="5dp"
+                            android:alpha="0.5"
+                            android:src="@drawable/baseline_monetization_on_24"
+                            app:tint="@color/white" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <!--    MISSIONS CARDVIEW-->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_missions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/card_vouchers"
+                    android:backgroundTint="@color/gray_light"
+                    android:layout_marginHorizontal="5dp"
+
+                    android:elevation="15dp"
+
+                    android:gravity="center"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="190dp"
+                        android:layout_height="190dp">
+
+                        <TextView
+                            android:id="@+id/text_cardTitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/verdana_bold"
+                            android:text="Missions"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/text_cardTitle2"
+                            android:fontFamily="@font/verdana"
+                            android:paddingHorizontal="25dp"
+                            android:paddingVertical="10dp"
+                            android:text="Check out today's missions and earn even more rewards!"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <ImageView
+                            android:layout_width="75dp"
+                            android:layout_height="70sp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginHorizontal="5dp"
+                            android:layout_marginVertical="5dp"
+                            android:alpha="0.5"
+                            android:src="@drawable/baseline_task_alt_24"
+                            app:tint="@color/black" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</FrameLayout>

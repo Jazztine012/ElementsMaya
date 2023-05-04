@@ -16,18 +16,18 @@
     </fragment>
     <fragment
         android:id="@+id/firstFragment"
-        android:name="com.example.kotlinappresources.FirstFragment"
+        android:name="com.example.kotlinappresources.OverviewFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" >
+        tools:layout="@layout/fragment_overview" >
         <action
             android:id="@+id/action_firstFragment_to_secondFragment"
             app:destination="@id/secondFragment" />
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
-        android:name="com.example.kotlinappresources.SecondFragment"
+        android:name="com.example.kotlinappresources.VouchersFragment"
         android:label="fragment_second"
-        tools:layout="@layout/fragment_second" >
+        tools:layout="@layout/fragment_vouchers" >
         <action
             android:id="@+id/action_secondFragment_to_firstFragment"
             app:destination="@id/firstFragment" />

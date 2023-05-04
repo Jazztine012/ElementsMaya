@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".VoucherFragment">
+
+    <com.google.android.material.circularreveal.CircularRevealRelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparent"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/text_above"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/verdana_bold"
+                android:text="No vouchers available."
+                android:textSize="23sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_above"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginVertical="20dp"
+                android:alpha="0.7"
+                android:text="All your vouchers will be shown here."
+                android:textSize="12sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_checkDeals"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CHECK DEALS"
+                android:textSize="15sp"
+                android:fontFamily="@font/verdana_bold"
+                android:backgroundTint="@color/green_basic"
+                app:cornerRadius="10dp"
+                android:paddingHorizontal="60dp"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.circularreveal.CircularRevealRelativeLayout>
+
+</FrameLayout>

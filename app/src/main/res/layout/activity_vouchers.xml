@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VouchersActivity"
+    android:background="@color/white">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_voucherNavigation"
+        android:layout_marginTop="0dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/navigation_graph_vouchers" />
+
+    <RelativeLayout
+        android:id="@+id/layout_voucherNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/layout_mainNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageButton_backButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/baseline_arrow_back_24"
+                android:background="@drawable/circle_transparent_button"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"/>
+
+            <TextView
+                android:id="@+id/text_vouchers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerInParent="true"
+                android:text="Vouchers"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_voucherNavigation"
+            android:layout_below="@id/layout_mainNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/gray_light"
+            app:strokeColor="@color/transparent"
+
+            android:layout_marginHorizontal="30dp"
+            android:paddingHorizontal="10dp">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+
+                android:rowCount="1"
+                android:columnCount="3">
+
+                <Button
+                    android:layout_columnWeight="1"
+
+                    android:id="@+id/button_availableVouchers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Available"
+                    android:textSize="12sp"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/black"
+
+                    android:layout_row="0"
+                    android:layout_column="0"/>
+
+                <Button
+                    android:layout_columnWeight="1"
+
+                    android:id="@+id/button_claimedVouchers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Claimed"
+                    android:textSize="12sp"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/black"
+
+                    android:layout_row="0"
+                    android:layout_column="1"/>
+
+                <Button
+                    android:layout_columnWeight="1"
+
+                    android:id="@+id/button_expiredVouchers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Expired"
+                    android:textSize="12sp"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/black"
+
+                    android:layout_row="0"
+                    android:layout_column="2"/>
+
+            </GridLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+    </RelativeLayout>
+</RelativeLayout>

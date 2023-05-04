@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_transaction_item_preview"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="7dp"
+    android:background="@drawable/ripple_background"
+
+    android:rowCount="2"
+    android:columnCount="2">
+
+<!--    TRANSACTION DESCRIPTION TEXTVIEW-->
+<!--    EITHER RECEIVED, PURCHASED, APPROVED, REFUNDED, ETC.-->
+    <TextView
+        android:id="@+id/text_transaction_description"
+
+        android:layout_row="0"
+        android:layout_column="0"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transaction Description"
+
+        android:layout_gravity="start"
+        android:textAlignment="textStart"
+        android:alpha="0.5"
+        android:textSize="9sp"/>
+
+<!--    DATE TEXTVIEW DAY/MONTH/YEAR FORMAT (EX. 02 MAY 2023)-->
+    <TextView
+        android:id="@+id/text_transaction_date"
+
+        android:layout_row="0"
+        android:layout_column="1"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transaction Date"
+
+        android:layout_gravity="end"
+        android:textAlignment="textEnd"
+        android:alpha="0.5"
+        android:textSize="9sp"/>
+
+<!--    LOCATION TEXTVIEW-->
+<!--    WHERE MONEY WAS SENT OR RECEIVED-->
+    <TextView
+        android:id="@+id/text_location"
+
+        android:layout_row="1"
+        android:layout_column="0"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+
+        android:layout_gravity="start"
+        android:textAlignment="textStart"
+        android:fontFamily="@font/verdana_bold"
+        android:alpha="1"
+        android:textSize="15sp"/>
+
+<!--    AMOUNT TEXTVIEW-->
+<!--    DEDUCTIONS WILL BE BLACK WHILE ADDITIONS WILL BE GREEN-->
+    <TextView
+        android:id="@+id/text_amount"
+
+        android:layout_row="1"
+        android:layout_column="1"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AMOUNT"
+
+        android:textColor="@color/black"
+        android:layout_gravity="end"
+        android:textAlignment="textEnd"
+        android:fontFamily="@font/verdana_bold"
+        android:alpha="1"
+        android:textSize="15sp"/>
+
+</GridLayout>
